@@ -1,0 +1,1 @@
+# Sine-Cosine-Algorithm-for-Reducing-Communication-Costs-of-Federated-Learning
