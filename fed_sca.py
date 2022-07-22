@@ -48,7 +48,7 @@ def write_csv(algorithm_name, list):
     Make the result a csv file.
 
     Args: 
-        algorithm_name: algorithm name, string type ex) FedPSO, FedAvg
+        algorithm_name: algorithm name, string type ex) FedSCA, FedAvg
         list: accuracy list, list type
     """
     file_name = '{name}_CIFAR10_randomDrop_{drop}%_output_LR_{lr}_CLI_{cli}_CLI_EPOCHS_{cli_epoch}_TOTAL_EPOCHS_{epochs}_BATCH_{batch}.csv'
@@ -175,7 +175,7 @@ class particle():
         r2 = (2 * np.pi) * random.random()
         r3 = 2 * random.random()
         r4 = random.random()
-        # PSO algorithm applied to weights
+        # SCA algorithm applied to weights
         for index, layer in enumerate(step_weight):
             
             # Eq. (3.3)
@@ -264,9 +264,9 @@ if __name__ == "__main__":
     print(server_model.summary())
 
     client_data = client_data_config(x_train, y_train)
-    pso_model = []
+    sca_model = []
     for i in range(NUMOFCLIENTS):
-        pso_model.append(particle(particle_num=i, client=init_model(train_data_shape=x_train.shape[1:]), x_train=client_data[i][0], y_train=client_data[i][1]))
+        sca_model.append(particle(particle_num=i, client=init_model(train_data_shape=x_train.shape[1:]), x_train=client_data[i][0], y_train=client_data[i][1]))
 
     server_evaluate_acc = []
     global_best_model = None
@@ -277,7 +277,7 @@ if __name__ == "__main__":
         start = time.time()
        
 
-        for client in pso_model:
+        for client in sca_model:
             if epoch != 0:
                 client.update_global_model(server_model, global_best_score)
        
@@ -293,7 +293,7 @@ if __name__ == "__main__":
         
         # Send the optimal model to each client after the best score comparison
         gid, global_best_score = get_best_score_by_loss(server_result)
-        for client in pso_model:
+        for client in sca_model:
             if client.resp_best_model(gid) != None:
                 global_best_model = client.resp_best_model(gid)
 
