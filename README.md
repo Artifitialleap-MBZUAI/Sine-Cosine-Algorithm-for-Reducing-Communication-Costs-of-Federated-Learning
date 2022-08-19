@@ -8,8 +8,11 @@ Federated learning (FL) is a setting for machine learning (ML) in which several 
 
 **Authors:**
 
-Ammar Kamal Abasi, Mohamed Bin Zayed University of Artificial Intelligence (MBZUAI), UAE. E-mail:ammar.abasi@mbzuai.ac.ae
+Ammar Kamal Abasi, Mohamed Bin Zayed University of Artificial Intelligence (MBZUAI), UAE.
+E-mail:ammar.abasi@mbzuai.ac.ae
 
-Moayad Aloqaily, Mohamed Bin Zayed University of Artificial Intelligence (MBZUAI), UAE. E-mail: maloqaily@ieee.org
+Moayad Aloqaily, Mohamed Bin Zayed University of Artificial Intelligence (MBZUAI), UAE.
+E-mail: maloqaily@ieee.org
 
-Mohsen Guizani, Mohamed Bin Zayed University of Artificial Intelligence (MBZUAI), UAE. E-mail: mguizani@ieee.org
+Mohsen Guizani, Mohamed Bin Zayed University of Artificial Intelligence (MBZUAI), UAE.
+E-mail: mguizani@ieee.org
